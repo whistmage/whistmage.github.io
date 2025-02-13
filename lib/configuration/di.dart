@@ -11,3 +11,11 @@ final getIt = GetIt.instance;
 void configureDependencies() {
   getIt.init();
 }
+
+@module
+abstract class RegisterModule {
+  @lazySingleton
+  Dio get dio => getIt.get<DioBuilder>().build(
+        baseUrl: getIt.get<AppConfig>().apiBaseUrl,
+      );
+}
