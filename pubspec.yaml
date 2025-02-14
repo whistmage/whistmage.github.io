@@ -20,7 +20,8 @@ dependencies:
   retrofit: ^4.4.1
   # Пакет с аннотациями для работа генератора json_serializable,
   json_annotation: ^4.9.0
-  # Service Locator для упрощения работы с зависимостями
+  # Стейт-менеджент
+  flutter_bloc: ^9.0.0
 
 dev_dependencies:
   flutter_test:
