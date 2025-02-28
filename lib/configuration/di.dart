@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sandbox/configuration/app_config.dart';
 import 'package:sandbox/data/networks/dio/dio_builder.dart';
+import 'package:sandbox/ui/appereance/app_theme.dart';
+import 'package:sandbox/ui/appereance/app_theme_builder.dart';
 import 'package:sandbox/ui/routing/router.dart';
 import 'di.config.dart';
 
@@ -23,4 +25,7 @@ abstract class RegisterModule {
 
   @lazySingleton
   GoRouter get router => getIt.get<RouterBuilder>().build();
+
+  @lazySingleton
+  AppTheme get appTheme => getIt.get<AppThemeBuilder>().build();
 }

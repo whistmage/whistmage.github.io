@@ -24,6 +24,11 @@ dependencies:
   flutter_bloc: ^9.0.0
   # Для удобной маршрутизации
   go_router: ^14.8.0
+  # Набор Шрифтов от гугла
+  google_fonts: ^6.2.1
+  # Набор готовых тем в стиле материал-дизайна
+  flex_color_scheme: ^8.0.2
+
 
 
 dev_dependencies:
