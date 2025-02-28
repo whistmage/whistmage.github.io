@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sandbox/configuration/di.dart';
 import 'package:sandbox/domain/state_models/app_theme_mode_state.dart';
 
@@ -17,26 +18,12 @@ class App extends StatelessWidget {
         ),
       ],
       child: BlocBuilder<AppThemeModeState, ThemeMode>(
-        builder: (context, themeMode) => MaterialApp(
+        builder: (context, themeMode) => MaterialApp.router(
           title: 'Sandbox',
           themeMode: themeMode,
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
-          home: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-              title: const Text(
-                'Sandbox',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            body: Center(
-              child: TextButton(
-                onPressed: context.read<AppThemeModeState>().checkoutMode,
-                child: Text('Change theme mode'),
-              ),
-            ),
-          ),
+          routerConfig: getIt.get<GoRouter>(),
         ),
       ),
     );
