@@ -32,6 +32,8 @@ dependencies:
   intl: ^0.19.0
   # Для запуска ссылок
   url_launcher: ^6.3.1
+  # Для простого ограничения размера десктопного окна
+  window_manager: ^0.4.3
 
 dev_dependencies:
   flutter_test:
