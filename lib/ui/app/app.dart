@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sandbox/configuration/di.dart';
 import 'package:sandbox/ui/appereance/app_theme.dart';
-import 'package:sandbox/ui/common/app_theme_observer/app_theme_observer.dart';
+import 'package:sandbox/ui/widgets/app_theme_observer/app_theme_observer.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,6 +16,7 @@ class App extends StatelessWidget {
         theme: getIt.get<AppTheme>().light,
         darkTheme: getIt.get<AppTheme>().dark,
         routerConfig: getIt.get<GoRouter>(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

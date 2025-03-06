@@ -14,12 +14,12 @@ class CareerNodeData {
     this.startDate,
   });
 
-  CompanyData? company;
-  String? details;
-  int? finishDate;
-  String? jobtTitle;
-  List<String>? skills;
-  int? startDate;
+  final CompanyData? company;
+  final String? details;
+  final int? finishDate;
+  final String? jobtTitle;
+  final List<String>? skills;
+  final int? startDate;
 
   factory CareerNodeData.fromJson(Map<String, dynamic> json) =>
       _$CareerNodeDataFromJson(json);

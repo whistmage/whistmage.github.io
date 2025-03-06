@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class AppThemeModeState extends Cubit<ThemeMode> {
-  AppThemeModeState({@factoryParam required Brightness systemSelectedBrightnes})
+class AppThemeModeCubit extends Cubit<ThemeMode> {
+  AppThemeModeCubit({@factoryParam required Brightness systemSelectedBrightnes})
       : _systemSelectedBrightnes = systemSelectedBrightnes,
         super(ThemeMode.system);
 

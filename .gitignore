@@ -1,6 +1,8 @@
 # generated dart files
 *.g.dart
 *.config.dart
+*.gen.dart
+
 
 # Miscellaneous
 *.class

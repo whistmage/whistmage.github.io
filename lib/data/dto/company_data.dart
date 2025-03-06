@@ -4,11 +4,10 @@ part 'company_data.g.dart';
 
 @JsonSerializable(createToJson: false)
 class CompanyData {
-  String? description;
-  String? name;
-  String? link;
+  CompanyData({this.name, this.link});
 
-  CompanyData({this.description, this.name});
+  final String? name;
+  final String? link;
 
   factory CompanyData.fromJson(Map<String, dynamic> json) =>
       _$CompanyDataFromJson(json);

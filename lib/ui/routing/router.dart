@@ -18,7 +18,11 @@ class RouterBuilder {
             ),
           ],
           builder: (context, state, navigationShell) {
-            return navigationShell;
+            return Scaffold(
+              body: SelectionArea(
+                child: navigationShell,
+              ),
+            );
           },
         ),
       ],
