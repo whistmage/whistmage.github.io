@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sandbox/entities/career/company.dart';
+import 'package:sandbox/ui/appereance/link_button_style_extension.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CompanyTitle extends StatelessWidget {
@@ -10,21 +10,16 @@ class CompanyTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final linkButtonStyleExtension =
+        Theme.of(context).extension<LinkButtonStyleExtension>();
     final link = company.link;
-
-    return CupertinoButton(
-      padding: EdgeInsets.zero,
-      minSize: 16,
-      onPressed: link == null ? null : () => _pressLink(link, context),
-      child: Text(
-        company.name,
-        style: TextStyle(
-          color: link == null
-              ? Theme.of(context).colorScheme.secondaryFixed
-              : Theme.of(context).colorScheme.secondary,
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-        ),
+    final leftOffset = linkButtonStyleExtension?.padding.left ?? 0;
+    return Transform.translate(
+      offset: Offset(-leftOffset, 0.0),
+      child: TextButton(
+        onPressed: link == null ? null : () => _pressLink(link, context),
+        style: linkButtonStyleExtension?.buttonStyle,
+        child: Text(company.name),
       ),
     );
   }

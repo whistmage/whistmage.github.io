@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sandbox/gen/assets.gen.dart';
+import 'package:sandbox/assets/assets.gen.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar({

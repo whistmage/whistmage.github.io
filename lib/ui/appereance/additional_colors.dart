@@ -38,19 +38,19 @@ class AdditionalColors extends ThemeExtension<AdditionalColors> {
             other.overlayColor,
             offset,
           ) ??
-          overlayColor,
+          other.overlayColor,
       minorTextColor: Color.lerp(
             minorTextColor,
             other.minorTextColor,
             offset,
           ) ??
-          minorTextColor,
+          other.minorTextColor,
       minorHeaderColor: Color.lerp(
             minorHeaderColor,
             other.minorHeaderColor,
             offset,
           ) ??
-          minorHeaderColor,
+          other.minorHeaderColor,
     );
   }
 }

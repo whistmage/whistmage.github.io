@@ -50,7 +50,12 @@ dev_dependencies:
   # Для статичного доступа к ассетам
   flutter_gen_runner: ^5.10.0
 
+flutter_gen:
+  output: lib/assets
+
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/photos/photo.jpeg
+    - assets/images/photos/
+    - assets/fonts/Gabriela/
+    - assets/fonts/Kablammo/

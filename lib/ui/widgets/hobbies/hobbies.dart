@@ -28,12 +28,13 @@ class Hobbies extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       headerBuilder: (_) => const _HobbiesHeader(),
-      itemBuilder: (_, index) => Padding(
-        padding: EdgeInsets.fromLTRB(8, 4, 4, 0),
-        child: _HobbyCard(
+      itemBuilder: (_, index) {
+        final isFirstItem = index == 0;
+        return _HobbyCard(
           title: hobbies[index],
-        ),
-      ),
+          padding: EdgeInsets.fromLTRB(8, isFirstItem ? 4 : 0, 4, 4),
+        );
+      },
     );
   }
 }
@@ -54,31 +55,33 @@ class _HobbiesHeader extends StatelessWidget {
 }
 
 class _HobbyCard extends StatelessWidget {
-  const _HobbyCard({required this.title});
+  const _HobbyCard({required this.title, required this.padding});
 
   final String title;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(top: 6),
-          child: Icon(
-            Icons.circle,
-            size: 8,
-            color: Colors.white,
+    final textStyle = Theme.of(context).textTheme.bodyMedium;
+    final color = Theme.of(context).colorScheme.onPrimary;
+    return Padding(
+      padding: padding,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 6),
+            child: Icon(Icons.circle, size: 8, color: color),
           ),
-        ),
-        SizedBox(width: 2),
-        Expanded(
-          child: Text(
-            title,
-            style: TextStyle(fontSize: 15, color: Colors.white),
+          SizedBox(width: 2),
+          Expanded(
+            child: Text(
+              title,
+              style: textStyle?.copyWith(color: color),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

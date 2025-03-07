@@ -23,7 +23,6 @@ class CareerNodeDuration extends StatelessWidget {
     return Text(
       '$rangeText, $formattedDuration',
       style: Theme.of(context).textTheme.bodySmall,
-      // style: const TextStyle(color: Color(0xFF73808D), fontSize: 10),
     );
   }
 }
