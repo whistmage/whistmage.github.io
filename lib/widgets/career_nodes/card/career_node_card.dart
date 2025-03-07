@@ -14,17 +14,18 @@ class CareerNodeCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CompanyTitle(company: careerNode.company),
-        const SizedBox(height: 4),
         Text(
           careerNode.jobtTitle,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
-        const SizedBox(height: 2),
+        const SizedBox(height: 4),
         CareerNodeDuration(careerNode: careerNode),
+        const SizedBox(height: 4),
         Text(
           careerNode.details,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
+        const SizedBox(height: 8),
       ],
     );
   }
