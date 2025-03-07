@@ -15,7 +15,7 @@ class OpenContactCase {
         link = Uri(scheme: 'https', path: contact.link);
     }
     if (await canLaunchUrl(link)) {
-      launchUrl(link);
+      await launchUrl(link);
     } else {
       throw Exception('''Can't open link: ${link.toString()}''');
     }
