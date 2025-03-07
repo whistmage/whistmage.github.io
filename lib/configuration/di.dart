@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:sandbox/configuration/app_config.dart';
 import 'package:sandbox/data/networks/dio/dio_builder.dart';
-import 'package:sandbox/ui/appereance/app_themes.dart';
-import 'package:sandbox/ui/appereance/app_theme_builder.dart';
-import 'package:sandbox/ui/routing/router.dart';
+import 'package:sandbox/widgets/app_theme/app_themes.dart';
+import 'package:sandbox/widgets/app_theme/app_theme_builder.dart';
+import 'package:sandbox/features/app/app_router_builder.dart';
 import 'di.config.dart';
 
 final getIt = GetIt.instance;
