@@ -20,14 +20,16 @@ class CareerNodes extends StatelessWidget {
     switch (state) {
       case CareerNodesLoadFinish():
         return HeadedSliverList(
-          padding: padding,
-          itemCount: state.values.length,
-          headerBuilder: (_) => PageSectionHeader(title: 'Опыт'),
-          itemBuilder: (context, index) {
-            return CareerNodeCard(careerNode: state.values[index]);
-          },
-          separatorBuilder: (context, index) => const SizedBox(height: 10),
-        );
+            padding: padding,
+            itemCount: state.values.length,
+            headerBuilder: (_) => PageSectionHeader(title: 'Опыт'),
+            itemBuilder: (context, index) {
+              return CareerNodeCard(careerNode: state.values[index]);
+            },
+            separatorBuilder: (context, index) {
+              if (index == 0) return SizedBox(height: 4);
+              return Divider();
+            });
       case CareerNodesLoadInProgess():
         return SliverPadding(
           padding: padding,
