@@ -8,11 +8,11 @@ class OpenContactCase {
     final Uri link;
     switch (contact) {
       case TelegramContact():
-        link = Uri(scheme: 'https', path: contact.link);
+        link = Uri.parse(contact.link);
       case EmailContact():
         link = Uri(scheme: 'mailto', path: contact.address);
       case GithubContact():
-        link = Uri(scheme: 'https', path: contact.link);
+        link = Uri.parse(contact.link);
     }
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
