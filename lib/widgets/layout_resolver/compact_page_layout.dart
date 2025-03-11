@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sandbox/widgets/checkout_theme_mode_button/checkout_theme_mode_button.dart';
+import 'package:sandbox/widgets/app_theme/checkout_theme_mode_button.dart';
 import 'package:sandbox/features/side_bar/side_bar.dart';
 
 class CompactPageLayout extends StatelessWidget {

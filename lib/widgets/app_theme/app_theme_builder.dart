@@ -28,7 +28,6 @@ class AppThemeBuilder {
     ),
   );
   static final _textTheme = TextTheme(
-    titleLarge: GoogleFonts.kablammo(fontSize: 24, color: Colors.white),
     titleMedium: GoogleFonts.gabriela(fontSize: 20, color: Colors.white),
     titleSmall: GoogleFonts.gabriela(fontSize: 16, color: Colors.white),
     bodyMedium: GoogleFonts.gabriela(fontSize: 14),
@@ -57,8 +56,14 @@ class AppThemeBuilder {
     ),
     color: lightFlexThemeColors.secondary,
   );
-
   AppThemes build() {
+    final appBarTheme = AppBarTheme(
+      centerTitle: true,
+      backgroundColor: Colors.transparent,
+      titleTextStyle: GoogleFonts.kablammo(fontSize: 24, color: Colors.white),
+      actionsIconTheme: IconThemeData(color: Colors.white),
+      iconTheme: IconThemeData(color: Colors.white),
+    );
     return AppThemes(
       light: FlexThemeData.light(
         scheme: FlexScheme.hippieBlue,
@@ -67,7 +72,7 @@ class AppThemeBuilder {
         appBarBackground: Colors.transparent,
         scaffoldBackground: lightFlexThemeColors.primary,
         extensions: [_additionalColors, _lightLinkButtonStyleExtension],
-      ).copyWith(textButtonTheme: textButtonTheme),
+      ).copyWith(textButtonTheme: textButtonTheme, appBarTheme: appBarTheme),
       dark: FlexThemeData.dark(
         scheme: FlexScheme.ebonyClay,
         surface: _darkSurface,
@@ -76,7 +81,7 @@ class AppThemeBuilder {
         appBarBackground: Colors.transparent,
         scaffoldBackground: _darkFlexThemeColors.primary,
         extensions: [_additionalColors, _darkLinkButtonStyleExtension],
-      ).copyWith(textButtonTheme: textButtonTheme),
+      ).copyWith(textButtonTheme: textButtonTheme, appBarTheme: appBarTheme),
     );
   }
 }

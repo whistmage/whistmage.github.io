@@ -9,10 +9,7 @@ class CheckoutThemeModeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: context.read<AppThemeModeCubit>().checkoutMode,
-      icon: Icon(
-        Icons.dark_mode,
-        color: Theme.of(context).colorScheme.onPrimary,
-      ),
+      icon: Icon(Icons.dark_mode),
     );
   }
 }
